@@ -26,6 +26,6 @@ def wavelengthToRGB(wavelength):
         yVal += alphaList[y]**((-1/2)*(wavelength-betaList[y+4])*((wavelength-betaList[y+4]) if gammaList[y+4] < 0 else deltaList[y+4]))**2
     for z in range (0, 1):
         zVal += alphaList[z]**((-1/2)*(wavelength-betaList[y+5])*((wavelength-betaList[y+5]) if gammaList[y+5] < 0 else deltaList[y+5]))**2
-    return [x, y, z]
+    return [xVal, yVal, zVal]
 
-print(xyzToRGB(np.array(wavelengthToRGB(800))))
+print(xyzToRGB(wavelengthToRGB(1700)))
