@@ -22,16 +22,18 @@ def wavelengthToRGB(wavelength):
     yVal = 0
     zVal = 0
     for x in range (3):
-        xVal += alphaList[x]*np.exp((-1/2)*(wavelength-betaList[x])*((wavelength-betaList[x]) (wavelength-betaList[x]) if gammaList[x] < 0 else deltaList[x]))**2
+        xVal += alphaList[x] * np.exp((-1/2) * (wavelength-betaList[x]) * (
+            gammaList[x] if wavelength < betaList[x] else deltaList[x])) ** 2
         print (xVal, x)
     for y in range (2):
-        yVal += alphaList[y+3]*np.exp((-1/2)*(wavelength-betaList[y+3])*((wavelength-betaList[y+3]) (wavelength-betaList[y+3]) if gammaList[y+3] < 0 else deltaList[y+3]))**2
-        print (yVal, y, "y")
+        yVal += alphaList[y+3] * np.exp((-1/2) * (wavelength-betaList[y+3]) * (
+            gammaList[y + 3] if wavelength < betaList[y + 3] else deltaList[y + 3])) ** 2
     for z in range (2):
-        zVal += alphaList[z+5]*np.exp((-1/2)*(wavelength-betaList[z+5])*((wavelength-betaList[z+5]) (wavelength-betaList[z+5]) if gammaList[z+5] < 0 else deltaList[z+5]))**2
+        zVal += alphaList[z+5] * np.exp((-1/2) * (wavelength-betaList[z+5]) * (
+            gammaList[z + 5] if wavelength < betaList[z + 5] else deltaList[z + 5])) ** 2
         print (zVal, z, "z")
     return [xVal, yVal, zVal]
-'''
+
 plt.style.use('dark_background')
 
 wavelengths = np.linspace(380, 720, 340)
@@ -50,5 +52,5 @@ plt.yticks([])
 plt.title('Colors (1nm intervals) vs. Wavelength')
 plt.show()
 
-'''
+
 print((wavelengthToRGB(550)))
