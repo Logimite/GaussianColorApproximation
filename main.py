@@ -22,13 +22,13 @@ def wavelengthToRGB(wavelength):
     yVal = 0
     zVal = 0
     for x in range (3):
-        xVal += (-1/2)*alphaList[x]*np.exp((wavelength-betaList[x])*((wavelength-betaList[x]) if gammaList[x] < 0 else deltaList[x]))**2
+        xVal += alphaList[x]*np.exp((-1/2)*(wavelength-betaList[x])*((wavelength-betaList[x]) (wavelength-betaList[x]) if gammaList[x] < 0 else deltaList[x]))**2
         print (xVal, x)
     for y in range (2):
-        yVal += (-1/2)*alphaList[y+3]*np.exp((wavelength-betaList[y+3])*((wavelength-betaList[y+3]) if gammaList[y+3] < 0 else deltaList[y+3]))**2
+        yVal += alphaList[y+3]*np.exp((-1/2)*(wavelength-betaList[y+3])*((wavelength-betaList[y+3]) (wavelength-betaList[y+3]) if gammaList[y+3] < 0 else deltaList[y+3]))**2
         print (yVal, y, "y")
     for z in range (2):
-        zVal += (-1/2)*alphaList[z+5]*np.exp((wavelength-betaList[z+5])*((wavelength-betaList[z+5]) if gammaList[z+5] < 0 else deltaList[z+5]))**2
+        zVal += alphaList[z+5]*np.exp((-1/2)*(wavelength-betaList[z+5])*((wavelength-betaList[z+5]) (wavelength-betaList[z+5]) if gammaList[z+5] < 0 else deltaList[z+5]))**2
         print (zVal, z, "z")
     return [xVal, yVal, zVal]
 '''
