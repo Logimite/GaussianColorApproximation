@@ -25,7 +25,7 @@ def wavelengthToRGB(wavelength):
     for y in range (0, 1):
         yVal += alphaList[y]**((-1/2)*(wavelength-betaList[y+4])*((wavelength-betaList[y+4]) if gammaList[y+4] < 0 else deltaList[y+4]))**2
     for z in range (0, 1):
-        zVal += alphaList[z]**((-1/2)*(wavelength-betaList[y+5])*((wavelength-betaList[y+5]) if gammaList[y+5] < 0 else deltaList[y+5]))**2
+        zVal += alphaList[z]**((-1/2)*(wavelength-betaList[z+6])*((wavelength-betaList[z+6]) if gammaList[z+6] < 0 else deltaList[z+6]))**2
     return [xVal, yVal, zVal]
 
 print(xyzToRGB(wavelengthToRGB(395)))
