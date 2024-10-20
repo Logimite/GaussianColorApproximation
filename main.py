@@ -14,7 +14,7 @@ def xyzToRGB(xyz):
         [0.0557, -0.2040, 1.0570]
     ])
     rgb = np.dot(transformation_matrix, xyz)
-    whited = np.dot(rgb, [0.94811, 1, 1.08883])
+    whited = np.matmul(rgb, [0.94811, 1, 1.08883])
     return whited
 
 def wavelengthToRGB(wavelength):
